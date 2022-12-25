@@ -31,3 +31,10 @@ test("Button Test",()=>{
   expect (screen.getByTestId('buttonTest')).toBeInTheDocument();
   
 })
+describe("Test the header component", () => {
+  test("render the comm web with 4 button", async () => {
+    render(<Header/>);
+    const buttonList = await screen.findAllByRole("button");
+    expect(buttonList).toHaveLength(4);
+  });
+  })
